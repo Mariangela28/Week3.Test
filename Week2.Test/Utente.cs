@@ -12,5 +12,7 @@ namespace Week2.Test
         public string Password { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
+
+        
     }
 }

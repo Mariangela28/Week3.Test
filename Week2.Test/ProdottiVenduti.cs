@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Week2.Test
 {
-    public class ProdottiVenduti : IProdottiVenduti
+    public class ProdottiVenduti 
     {
         public int Codice { get; set; }
         public string Descrizione { get; set; }
         public double Prezzo { get; set; }
         public double PercentualeSconto { get; set; }
 
-        private IList<Ordine> _ordini = new List<Ordine>();
+        public IList<ProdottiVenduti> _prodotti = new List<ProdottiVenduti>();
         public ProdottiVenduti(int codice, string descrizione, double prezzo, double percentualeSconto)
         {
             Codice = codice;
@@ -22,12 +22,19 @@ namespace Week2.Test
             PercentualeSconto = percentualeSconto;
         }
 
-        public ProdottiVenduti(int codice, string descrizione, double prezzo, double percentualeSconto, string produttore) : this(codice, descrizione, prezzo, percentualeSconto)
-        {
-        }
+        
 
-        public ProdottiVenduti(int codice, string descrizione, double prezzo, double percentualeSconto, string produttore, string brand) : this(codice, descrizione, prezzo, percentualeSconto, produttore)
+        public void AggiungiProdotto(int codice)
         {
+            var AggiungiProdotto = new ProdottiVenduti(Codice, Descrizione, Prezzo, PercentualeSconto);
+            _prodotti.Add(new ProdottiVenduti(Codice, Descrizione, Prezzo, PercentualeSconto));
+            
+               
+                    
+            }
+
+        
         }
     }
-}
+    
+
